@@ -1,10 +1,16 @@
 import paramiko
 import time
-from settings import *
+from config import settings
 
 path_script = '/home/python/telegram/copy_post_tg_to_vk/'
 process_name = 'run_coper_script_tg_in_vk.py'
 python3 = "venv/bin/python3"
+
+server = settings.server_1
+
+host = server.host
+username = server.username
+password = server.password
 
 
 # Функция для выполнения команды на удалённом сервере
