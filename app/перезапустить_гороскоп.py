@@ -8,7 +8,7 @@ python3 = ".venv/bin/python3"
 
 server = settings.server_1
 
-host = server.host
+host = str(server.host.network_address)
 username = server.username
 password = server.password
 
@@ -23,7 +23,7 @@ def execute_ssh_command(ssh, command):
 
 # Подключение по SSH
 def restart_python_process():
-    try:
+    # try:
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh.connect(hostname=host, username=username, password=password)
@@ -69,8 +69,8 @@ def restart_python_process():
 
         ssh.close()
 
-    except Exception as e:
-        print(f'Ошибка: {e}')
+    # except Exception as e:
+    #     print(f'Ошибка: {e}')
 
 
 if __name__ == '__main__':

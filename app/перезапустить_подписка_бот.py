@@ -9,7 +9,7 @@ python3 = "venv/bin/python3"
 
 server = settings.server_2
 
-host = server.host
+host = str(server.host.network_address)
 username = server.username
 password = server.password
 
