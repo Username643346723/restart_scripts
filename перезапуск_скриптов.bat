@@ -1,34 +1,34 @@
-chcp 65001
 @echo off
-REM Активируем виртуальное окружение
+
+REM Aktiviruem virtualnoe okruzhenie
 call venv\Scripts\activate
 
-REM Переходим в папку с Python-скриптами
+REM Perekhodim v papku s Python-skriptami
 cd app
 
-echo Выберите скрипт для запуска:
-echo [1] перезапустить_гороскоп.py
-echo [2] перезапустить_копер_постов_с_тг_в_вк.py
-echo [3] перезапустить_копер_постов_с_тг_группы_ejdailyru.py
-echo [4] перезапустить_подписка_бот.py
-set /p choice=Введите номер скрипта (1-4):
+echo Vyberite skript dlya zapuska:
+echo [1] restart_goroskop.py
+echo [2] restart_kopir_postov_s_tg_v_vk.py
+echo [3] restart_kopir_postov_s_tg_gruppy_ejdailyru.py
+echo [4] restart_podpiska_bot.py
+set /p choice=Vvedite nomer skripta (1-4):
 
-REM Определяем, какой скрипт запустить
+REM Opredelyaem, kakoy skript zapustit
 if "%choice%"=="1" (
-    python перезапустить_гороскоп.py
+    python restart_goroskop.py
 ) else if "%choice%"=="2" (
-    python перезапустить_копер_постов_с_тг_в_вк.py
+    python restart_kopir_postov_s_tg_v_vk.py
 ) else if "%choice%"=="3" (
-    python перезапустить_копер_постов_с_тг_группы_ejdailyru.py
+    python restart_kopir_postov_s_tg_gruppy_ejdailyru.py
 ) else if "%choice%"=="4" (
-    python перезапустить_подписка_бот.py
+    python restart_podpiska_bot.py
 ) else (
-    echo Неверный выбор! Завершаю работу.
+    echo Nevernyy vybor! Vyhod.
     exit /b 1
 )
 
-REM Возвращаемся в исходную директорию
+REM Vozvrashchaemsya v iskhodnuyu direktoriyu
 cd ..
 
-echo Скрипт выполнен.
+echo Skript vypolnen.
 pause
