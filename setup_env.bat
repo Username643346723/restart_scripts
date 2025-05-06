@@ -1,27 +1,27 @@
-chcp 65001
 @echo off
-REM Проверка, установлен ли Python
+
+REM Proverka, ustanovlen li Python
 python --version >nul 2>&1
 IF %ERRORLEVEL% NEQ 0 (
-    echo Python не найден. Установите Python и добавьте его в PATH.
+    echo Python ne naiden. Ustanovite Python i dobav'te ego v PATH.
     pause
     exit /b 1
 )
 
-REM Создание виртуального окружения
-echo Создаём виртуальное окружение...
+REM Sozdaem virtualnoe okruzhenie
+echo Sozdanie virtualnogo okruzheniya...
 python -m venv venv
 
-REM Активация виртуального окружения
+REM Aktiviruem virtualnoe okruzhenie
 call venv\Scripts\activate
 
-REM Установка зависимостей из requirements.txt
+REM Ustanavlivaem zavisimosti iz requirements.txt
 if exist requirements.txt (
-    echo Устанавливаем зависимости из requirements.txt...
+    echo Ustanovka zavisimostey iz requirements.txt...
     pip install -r requirements.txt
 ) else (
-    echo Файл requirements.txt не найден.
+    echo File requirements.txt ne naiden.
 )
 
-echo Установка завершена. Виртуальное окружение готово.
+echo Ustanovka zavershena. Zakryvayte okno.
 pause
